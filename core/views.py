@@ -22,6 +22,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
 
+def contact_us(request):
+    return render(request, "contact_us.html", {})
 
 class PaymentView(View):
     def get(self, *args, **kwargs):
