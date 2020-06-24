@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    command: "gunicorn --workers=2 --bind=0.0.0.0:8000 demo.wsgi:application"
     container_name: worldofsports
     volumes:
       - .:/worldofsports
