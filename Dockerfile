@@ -6,7 +6,8 @@ FROM python:3.6.9
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED 1
 
-# create root directory for our project in the container
+# Install bash and create root directory for our project in the container
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN mkdir /worldofsports
 
 # Set the working directory to /worldofsports
